@@ -1,0 +1,38 @@
+Revers a given string and count the number of words and vowels in it.
+
+import java.util.*;
+public class reverseVowels 
+{
+	public static void main(String[] args)
+	{
+		int count=1;
+		int vcount=0;
+		System.out.println("Enter a String: ");
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String rev="";
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			rev=rev + str.charAt(i);			
+		}
+		System.out.println("Reversed String: "+rev);
+		for(int i=0;i<str.length()-1;i++)
+		{
+			if(str.charAt(i)==' ' || str.charAt(i)==' ' || str.charAt(i)=='\t')
+			{
+				count++;
+			}			
+		}
+		System.out.println("Number of words: "+count);
+		String newstr=str.toLowerCase();
+		for(int i=0;i<newstr.length();i++)
+		{
+			if(newstr.charAt(i)=='a' || newstr.charAt(i)=='e' || newstr.charAt(i)=='i'
+					|| newstr.charAt(i)=='o' || newstr.charAt(i)=='u')
+			{
+				vcount++;
+			}
+		}
+		System.out.println("Number of vowels: "+vcount);
+	}
+}
